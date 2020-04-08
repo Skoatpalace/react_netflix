@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addMovie, removeMovie } from '../actions/movie';
 import '../css/Poster.css';
 
 
-class Poster extends Component {
+class PosterComponent extends Component {
     state = {
         hover: false,
     }
@@ -18,10 +21,12 @@ class Poster extends Component {
     }
     remove = () => {
         //à implémenter avec redux
+        this.props.removeM(this.props.id)
         console.log("remove avec redux")
     }
     add = () => {
         //à implémenter avec redux
+        this.props.addM(this.props.movie)
         console.log("add avec redux")
     }
     render() {
@@ -31,7 +36,9 @@ class Poster extends Component {
                 onMouseLeave={this.hideOverlay}
                 className='poster'
             >
-                <img className='poster--img' src={this.props.imgSrc} alt='poster' />
+                <Link to={{pathname: `/${this.props.id}`}}>
+                    <img className='poster--img' src={this.props.imgSrc} alt='poster' />
+                </Link>
                 {this.state.hover ?
                     (
                         <div className='poster--overlay'>
@@ -51,4 +58,12 @@ class Poster extends Component {
         )
     }
 }
+const mapDispatchToProps = dispatch => {
+    return {
+        addM: movie => dispatch(addMovie(movie)),
+        removeM: movieId => dispatch(removeMovie(movieId))
+    }
+}
+const Poster = connect(null, mapDispatchToProps)(PosterComponent)
+
 export { Poster }

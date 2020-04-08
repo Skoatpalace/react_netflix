@@ -4,9 +4,18 @@
   position: relative;
 }
 .poster--img {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
   width: 100%;
   cursor: pointer;
 }
+.poster--img:hover {
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
 .poster--overlay {
   position: absolute;
   left: 0;
@@ -34,7 +43,7 @@
   cursor: pointer;
 }
 .poster--overlay__text {
-  margin: 0 au  to;
+  margin: 0 auto;
   font-weight: bold;
   font-size: 2rem;
   color: white;

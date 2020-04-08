@@ -2,7 +2,7 @@ const API_URL = 'https://api.themoviedb.org/3';
 
 const IMAGE_BASE_URL = 'http://image.tmdb.org/t/p';
 
-const API_KEY = '25335f12785711cd0e07bddcaf4da84a';
+const API_KEY = 'xxxxxx';
 
 const BACKDROP_SIZE = 'w1280';
 

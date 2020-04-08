@@ -1,7 +1,7 @@
 .headerDetails {
   margin-top: 6.9rem;
   padding: 2rem;
-  width: 100vw;
+  width: 100%;
   height: 40rem;
   background: rgba(0, 0, 0, 0.94);
   display: flex;
@@ -19,7 +19,7 @@
   height: 100%;
 }
 .headerDetails--container {
-  width: 75%;
+  width: 100%;
   height: 100%;
   padding: 2rem;
   display: flex;
@@ -40,6 +40,7 @@
   line-height: 2.3rem;
   font-weight: 100;
   padding-top: 2rem;
+  margin-right: 2rem;
 }
 .headerDetails--info {
   display: flex;
@@ -55,7 +56,7 @@
   color: white;
   background: #d8a860;
   position: absolute;
-  right: -5rem;
+  right: -2rem;
   top: 5rem;
   transform: rotateZ(45deg);
   display: flex;
